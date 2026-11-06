@@ -1,7 +1,7 @@
 {
-  "name": "SK16 Service",
-  "short_name": "Service",
-  "description": "Serviceprotokoll med foto före och efter åtgärd",
+  "name": "SK16 Skyddsrumskontroll",
+  "short_name": "SK16",
+  "description": "Besiktningsprotokoll för skyddsrumskontroll enligt SK 16 (MCF)",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
