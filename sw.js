@@ -1,6 +1,7 @@
 // Offline-stöd: allt som behövs läggs i cachen vid första besöket.
 // Höj versionsnumret när du laddar upp en ny version av appen.
-const CACHE = "sk16-v2";
+const CACHE = "sk16-v3";
+const PREFIX = "sk16-v";
 const FILES = ["./", "./index.html", "./app.js", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", (e) => {
@@ -8,7 +9,7 @@ self.addEventListener("install", (e) => {
 });
 self.addEventListener("activate", (e) => {
   e.waitUntil(
-    caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim())
+    caches.keys().then((ks) => Promise.all(ks.filter((k) => k.startsWith(PREFIX) && k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim())
   );
 });
 // Cache först (snabbt och fungerar utan nät), uppdatera i bakgrunden när nät finns.
