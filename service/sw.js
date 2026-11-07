@@ -1,6 +1,6 @@
 // Offline-stöd: allt som behövs läggs i cachen vid första besöket.
 // Höj versionsnumret när du laddar upp en ny version av appen.
-const CACHE = "sk16service-v2";
+const CACHE = "sk16service-v3";
 const PREFIX = "sk16service-";
 const FILES = ["./", "./index.html", "./app.js", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
 
